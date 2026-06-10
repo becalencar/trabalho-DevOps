@@ -1,0 +1,25 @@
+name: Rodar Hello World em Python
+
+on: [push]
+
+jobs:
+  executar-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Rodar o Hello World
+        run: python hello.py
+
+      - name: Instalar dependências de teste
+        run: pip install pytest
+
+      - name: Rodar os testes automáticos
+        run: pytest test_calculadora.py -v
