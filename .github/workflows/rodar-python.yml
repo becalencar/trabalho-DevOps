@@ -15,9 +15,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Rodar o Hello World
-        run: python hello.py
-
       - name: Instalar dependências de teste
         run: pip install pytest
 
