@@ -1,4 +1,4 @@
-name: Rodar Hello World em Python
+name: Testes Automáticos - Calculadora Python
 
 on: [push]
 
