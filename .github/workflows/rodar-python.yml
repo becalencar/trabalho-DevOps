@@ -2,7 +2,7 @@ name: Testes Automáticos - Calculadora Python
 
 on: [push]  # gatilho
 
-jobs:
+  jobs:
   executar-python:
     runs-on: ubuntu-latest  # máquina virtual em que os testes vão rodar
 
