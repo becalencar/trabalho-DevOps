@@ -1,22 +1,22 @@
 name: Testes Automáticos - Calculadora Python
 
-on: [push]
+on: [push]  # gatilho
 
 jobs:
   executar-python:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # máquina virtual em que os testes vão rodar
 
     steps:
       - name: Baixar o código do repositório
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4  # clona os arquivos do repositório para dentro da máquina virtual.
 
       - name: Instalar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5  # action que prepara um ambiente python
         with:
-          python-version: '3.11'
+          python-version: '3.11'  # instala a versão 3.11 do python
 
       - name: Instalar dependências de teste
-        run: pip install pytest
+        run: pip install pytest  # pytest é uma biblioteca de testes para python
 
       - name: Rodar os testes automáticos
         run: pytest test_calculadora.py -v
