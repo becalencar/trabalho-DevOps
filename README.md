@@ -3,7 +3,7 @@
 
 Projeto acadêmico desenvolvido para a disciplina de DevOps.  
 **Tecnologia explorada:** GitHub Actions  
-**Grupo:** _(Arthur Mota, Filippe, Isadora, Rebeca Alencar)_
+**Grupo:** _(Arthur Mota, Fillipe Barbosa, Isadora Martins, Rebeca Alencar, Vitória Merlino)_
 
 ---
 
@@ -18,7 +18,7 @@ Com o GitHub Actions, sempre que um desenvolvedor envia código novo (via `push`
 - Compilar o projeto
 - Fazer deploy em servidores
 
-Tudo isso sem intervenção humana — é o conceito de **automação de pipeline**.
+Tudo isso sem intervenção manual.
 
 ---
 
@@ -46,7 +46,7 @@ trabalho-DevOps/
 
 ## ⚙️ Como funciona o Workflow
 
-O arquivo `.github/workflows/rodar-python.yml` define o fluxo de automação. Veja o que cada parte faz:
+O arquivo `.github/workflows/rodar-python.yml` define o fluxo de automação.
 
 ```yaml
 name: Testes Automáticos - Calculadora Python
@@ -99,31 +99,6 @@ assert somar(2, 3) == 5   # afirmo que somar 2 e 3 deve retornar 5
 Se a afirmação for verdadeira → teste passa ✅  
 Se for falsa → teste falha ❌ e o GitHub Actions notifica o time
 
-### Testes implementados
-
-| Teste | O que verifica |
-|---|---|
-| `test_somar` | Se a soma retorna o valor correto |
-| `test_subtrair` | Se a subtração retorna o valor correto |
-| `test_multiplicar` | Se a multiplicação retorna o valor correto |
-| `test_dividir` | Se a divisão retorna o valor correto |
-| `test_dividir_por_zero` | Se o código lança erro ao tentar dividir por zero |
-
----
-
-## ▶️ Como reproduzir a demonstração
-
-**Pré-requisitos:** ter uma conta no GitHub (sem necessidade de instalar nada localmente).
-
-1. Faça um fork deste repositório
-2. Acesse o repositório forkado
-3. Edite qualquer arquivo (por exemplo, adicione um comentário em `calculadora.py`)
-4. Faça o commit da alteração
-5. Vá para a aba **Actions** do repositório
-6. Veja o workflow rodar automaticamente e os testes passando
-
-Para simular um erro: altere uma função da calculadora com um valor errado (ex: `return a + b + 1`) e observe o workflow acusar a falha em vermelho.
-
 ---
 
 ## ✅ Vantagens do GitHub Actions
@@ -140,11 +115,3 @@ Para simular um erro: altere uma função da calculadora com um valor errado (ex
 - Workflows complexos podem demorar para executar
 - Depende da infraestrutura do GitHub (indisponível se o GitHub cair)
 - A curva de aprendizado do YAML pode ser um obstáculo inicial
-
----
-
-## 📚 Referências
-
-- [Documentação oficial do GitHub Actions (PT-BR)](https://docs.github.com/pt/actions)
-- [Documentação do pytest](https://docs.pytest.org/)
-- [Guia rápido do GitHub Actions](https://docs.github.com/pt/actions/get-started/quickstart)
