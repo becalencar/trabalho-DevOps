@@ -8,10 +8,10 @@ jobs:
 
     steps:
       - name: Baixar o código do repositório
-        uses: actions/checkout@v4  # clona os arquivos do repositório para dentro da máquina virtual.
+        uses: actions/checkout@v4  # [action] clona os arquivos do repositório para dentro da máquina virtual.
 
       - name: Instalar Python
-        uses: actions/setup-python@v5  # action que prepara um ambiente python
+        uses: actions/setup-python@v5  # [action] prepara um ambiente python
         with:
           python-version: '3.11'  # instala a versão 3.11 do python
 
@@ -20,3 +20,5 @@ jobs:
 
       - name: Rodar os testes automáticos
         run: pytest test_calculadora.py -v
+
+# as actions são programas prontos criados pela equipe do GitHub.
