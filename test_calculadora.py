@@ -1,4 +1,4 @@
-from calculadora import somar, subtrair, multiplicar, dividir
+from calculadora import somar, subtrair, multiplicar, dividir, raiz_quadrada
 
 def test_somar():
     assert somar(2, 3) == 5
@@ -19,3 +19,8 @@ def test_dividir_por_zero():
         assert False  # se chegou aqui, o teste falhou
     except ValueError:
         assert True   # erro esperado, teste passou
+
+def test_raiz():
+    assert raiz_quadrada(25) == 5
+
+    ;;
