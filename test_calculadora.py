@@ -22,5 +22,3 @@ def test_dividir_por_zero():
 
 def test_raiz():
     assert raiz_quadrada(25) == 5
-
-    ;;
