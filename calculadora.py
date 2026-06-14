@@ -19,7 +19,7 @@ def raiz_quadrada(a):
         raise ValueError("Não é possível calcular a raiz quadrade 0!")
     
     if a < 0:
-        raise ValueError("N]ao é possível calcular a raiz quadrada de um número negativo!")
+        raise ValueError("Não é possível calcular a raiz quadrada de um número negativo!")
     
     return math.sqrt(a)
 
