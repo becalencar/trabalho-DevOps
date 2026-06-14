@@ -116,6 +116,13 @@ Se for falsa → teste falha ❌ e o GitHub Actions notifica o time.
 
 ---
 
+## ❓ Dificuldades enfrentadas
+- **Pasta com nome incorreto:** a pasta foi criada como `trabalho.github/workflows` em vez de `.github/workflows`, fazendo o GitHub Actions ignorar o workflow completamente;
+- **Ordem dos arquivos:** a princípio, os arquivos foram criados em commits separados, fazendo o workflow rodar antes de todos existirem e causando erro de `exit code 2`;
+- **Versões desatualizadas:** as actions `checkout` e `setup-python` exibiram aviso de depreciação do Node.js 20, resolvido atualizando para versões específicas (`@v4.2.2` e `@v5.6.0`).
+
+---
+
 ## ✅ Vantagens do GitHub Actions
 
 - **Integrado ao GitHub:** não precisa configurar ferramentas externas;
@@ -123,13 +130,6 @@ Se for falsa → teste falha ❌ e o GitHub Actions notifica o time.
 - **Feedback imediato:** o time sabe em segundos se o código quebrou algo;
 - **Reproduzível:** cada execução roda em um ambiente limpo e idêntico;
 - **Marketplace de actions:** milhares de automações prontas para usar.
-
----
-
-## ❓ Dificuldades enfrentadas
-- **Pasta com nome incorreto:** a pasta foi criada como `trabalho.github/workflows` em vez de `.github/workflows`, fazendo o GitHub Actions ignorar o workflow completamente;
-- **Ordem dos arquivos:** a princípio, os arquivos foram criados em commits separados, fazendo o workflow rodar antes de todos existirem e causando erro de `exit code 2`;
-- **Versões desatualizadas:** as actions `checkout` e `setup-python` exibiram aviso de depreciação do Node.js 20, resolvido atualizando para versões específicas (`@v4.2.2` e `@v5.6.0`).
 
 ---
 
