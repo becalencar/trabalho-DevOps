@@ -3,7 +3,7 @@
 
 Projeto acadêmico desenvolvido para a disciplina de DevOps.  
 **Tecnologia explorada:** GitHub Actions  
-**Grupo:** _(Arthur Mota, Fillipe Barbosa, Isadora Martins, Rebeca Alencar, Vitória Merlino)_
+**Grupo:** _Arthur Mota, Fillipe Barbosa, Isadora Martins, Rebeca Alencar, Vitória Merlino_
 
 ---
 
@@ -27,6 +27,17 @@ Tudo isso sem intervenção manual.
 Este projeto demonstra o uso do GitHub Actions para **executar testes automáticos** em um pequeno programa Python (uma calculadora) sempre que novo código é enviado ao repositório.
 
 A ideia central é mostrar na prática o conceito de **CI (Integração Contínua):** qualquer alteração no código é automaticamente testada, e o resultado fica visível para todo o time.
+
+---
+
+**Passo a passo de como foi construído o repositório:**
+1. **Criação do repositório:** um repositório público no GitHub, inicializado com um README.md padrão, gerado automaticamente.
+2. **Configuração do workflow:** foi adicionado um novo arquivo chamado `.github/workflows/rodar-python.yml`, onde já foi criado de uma só vez o diretório (pasta) e o arquivo .yml que roda a automação.
+3. **Configuração do arquivo rodar-python.yml:** foi configurado dentro deste arquivo qual o arquivo seria rodado na automação (test_calculadora.py), em que momento a automação rodaria (em qualquer `push`), qual versão do python seria instalada, quais `steps` seriam feitos, etc. 
+4. **Criação do arquivo calculadora.py:** um arquivo python com 5 funções básicas: somar, subtrair, multiplicar, dividir e raiz quadrada. A função dividir inclui validação de divisão por zero, lançando um ValueError caso o divisor seja zero.
+5. **Criação do arquivo test_calculadora.py:** arquivo de teste do arquivo `calculadora.py`, usando a biblioteca pytest. O arquivo possui 6 testes: test_somar, test_subtrair, test_multiplicar, test_dividr, test_dividir_por_zero e test_raiz_quadrada.
+6. **Verificação do resultado:** após os arquivos devidamente criados e ser feito um `push` no GitHub, o workflow rodou automaticamente e foram verificados os resultados para saber se os arquivos continham algum erro.
+  
 
 ---
 
