@@ -30,14 +30,18 @@ A ideia central é mostrar na prática o conceito de **CI (Integração Contínu
 
 ---
 
-**Passo a passo de como foi construído o repositório:**
+## 🪢 Passo a passo de como foi construído o repositório:
 1. **Criação do repositório:** um repositório público no GitHub, inicializado com um README.md padrão, gerado automaticamente.
+   
 2. **Configuração do workflow:** foi adicionado um novo arquivo chamado `.github/workflows/rodar-python.yml`, onde já foi criado de uma só vez o diretório (pasta) e o arquivo .yml que roda a automação.
-3. **Configuração do arquivo rodar-python.yml:** foi configurado dentro deste arquivo qual o arquivo seria rodado na automação (test_calculadora.py), em que momento a automação rodaria (em qualquer `push`), qual versão do python seria instalada, quais `steps` seriam feitos, etc. 
-4. **Criação do arquivo calculadora.py:** um arquivo python com 5 funções básicas: somar, subtrair, multiplicar, dividir e raiz quadrada. A função dividir inclui validação de divisão por zero, lançando um ValueError caso o divisor seja zero.
-5. **Criação do arquivo test_calculadora.py:** arquivo de teste do arquivo `calculadora.py`, usando a biblioteca pytest. O arquivo possui 6 testes: test_somar, test_subtrair, test_multiplicar, test_dividr, test_dividir_por_zero e test_raiz_quadrada.
-6. **Verificação do resultado:** após os arquivos devidamente criados e ser feito um `push` no GitHub, o workflow rodou automaticamente e foram verificados os resultados para saber se os arquivos continham algum erro.
-  
+
+3. **Configuração do arquivo rodar-python.yml:** foi configurado dentro deste arquivo o gatilho que rodaria a automação (`push`), a máquina virtual que rodará a automação (Ubuntu), a instalação de uma versão do python e o arquivo que será rodado na automação (`test_calculadora.py`).
+   
+4. **Criação do arquivo calculadora.py:** um arquivo python com 4 funções básicas: somar, subtrair, multiplicar e dividir. A função dividir inclui validação de divisão por zero, lançando um ValueError caso o divisor seja zero.
+   
+5. **Criação do arquivo test_calculadora.py:** arquivo de teste do arquivo `calculadora.py`, usando a biblioteca pytest. O arquivo possui 5 testes: test_somar, test_subtrair, test_multiplicar, test_dividr e test_dividir_por_zero.
+   
+6. **Verificação do resultado:** após os arquivos devidamente criados e ser feito um `push` no GitHub, o workflow rodou automaticamente e foram verificados os resultados para saber se os arquivos continham algum erro. 
 
 ---
 
@@ -86,14 +90,14 @@ jobs:
 
 **Passo a passo do que acontece a cada push:**
 
-1. O GitHub detecta que novo código foi enviado
-2. Sobe uma máquina virtual Ubuntu do zero
-3. Baixa o código do repositório para essa máquina
-4. Instala o Python 3.11
-5. Instala o pytest
-6. Roda os testes da calculadora
-7. Exibe ✅ (passou) ou ❌ (falhou) para cada teste
-8. Desliga a máquina virtual
+1. O GitHub detecta que novo código foi enviado;
+2. Sobe uma máquina virtual Ubuntu do zero;
+3. Baixa o código do repositório para essa máquina;
+4. Instala o Python 3.11;
+5. Instala o pytest;
+6. Roda os testes da calculadora;
+7. Exibe ✅ (passou) ou ❌ (falhou) para cada teste;
+8. Desliga a máquina virtual.
 
 ---
 
@@ -107,22 +111,31 @@ A palavra-chave principal é o `assert` ("afirmo que"):
 assert somar(2, 3) == 5   # afirmo que somar 2 e 3 deve retornar 5
 ```
 
-Se a afirmação for verdadeira → teste passa ✅  
-Se for falsa → teste falha ❌ e o GitHub Actions notifica o time
+Se a afirmação for verdadeira → teste passa ✅.
+Se for falsa → teste falha ❌ e o GitHub Actions notifica o time.
 
 ---
 
 ## ✅ Vantagens do GitHub Actions
 
-- **Integrado ao GitHub:** não precisa configurar ferramentas externas
-- **Gratuito para repositórios públicos**
-- **Feedback imediato:** o time sabe em segundos se o código quebrou algo
-- **Reproduzível:** cada execução roda em um ambiente limpo e idêntico
-- **Marketplace de actions:** milhares de automações prontas para usar
+- **Integrado ao GitHub:** não precisa configurar ferramentas externas;
+- **Gratuito para repositórios públicos;**
+- **Feedback imediato:** o time sabe em segundos se o código quebrou algo;
+- **Reproduzível:** cada execução roda em um ambiente limpo e idêntico;
+- **Marketplace de actions:** milhares de automações prontas para usar.
+
+---
+
+## ❓ Dificuldades enfrentadas
+- **Pasta com nome incorreto:** a pasta foi criada como `trabalho.github/workflows` em vez de `.github/workflows`, fazendo o GitHub Actions ignorar o workflow completamente;
+- **Ordem dos arquivos:** a princípio, os arquivos foram criados em commits separados, fazendo o workflow rodar antes de todos existirem e causando erro de `exit code 2`;
+- **Versões desatualizadas:** as actions `checkout` e `setup-python` exibiram aviso de depreciação do Node.js 20, resolvido atualizando para versões específicas (`@v4.2.2` e `@v5.6.0`).
+
+---
 
 ## ⚠️ Limitações
 
-- Repositórios privados têm limite de minutos gratuitos por mês
-- Workflows complexos podem demorar para executar
-- Depende da infraestrutura do GitHub (indisponível se o GitHub cair)
-- A curva de aprendizado do YAML pode ser um obstáculo inicial
+- Repositórios privados têm limite de minutos gratuitos por mês;
+- Workflows complexos podem demorar para executar;
+- Depende da infraestrutura do GitHub (indisponível se o GitHub cair);
+- A curva de aprendizado do YAML pode ser um obstáculo inicial.
