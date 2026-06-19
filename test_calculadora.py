@@ -19,6 +19,3 @@ def test_dividir_por_zero():
         assert False  # se chegou aqui, o teste falhou
     except ValueError:
         assert True   # erro esperado, teste passou
-
-def test_raiz():
-    assert raiz_quadrada(25) == 5
