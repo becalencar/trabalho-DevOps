@@ -51,10 +51,11 @@ A ideia central é mostrar na prática o conceito de **CI (Integração Contínu
 trabalho-DevOps/
 ├── .github/
 │   └── workflows/
-│       └── rodar-python.yml     ← o workflow de automação
-├── calculadora.py               ← código que será testado
-├── test_calculadora.py          ← testes automáticos com pytest
-└── README.md                    ← este arquivo
+│       └── rodar-python.yml            ← o workflow de automação
+├── apresentacao-github-actions.pdf     ← slide de apresentação
+├── calculadora.py                      ← código que será testado
+├── test_calculadora.py                 ← testes automáticos com pytest
+└── README.md                           ← este arquivo
 ```
 
 ---
