@@ -4,7 +4,7 @@ on: [push]  # gatilho
 
 jobs:
   executar-python:
-    runs-on: ubuntu-latest  # máquina virtual em que os testes vão rodar
+runs-on: ubuntu-latest  # máquina virtual em que os testes vão rodar
 
     steps:
       - name: Baixar o código do repositório
