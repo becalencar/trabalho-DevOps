@@ -1,4 +1,4 @@
-from calculadora import somar, subtrair, multiplicar, dividir, raiz_quadrada
+from calculadora import somar, subtrair, multiplicar, dividir
 
 def test_somar():
     assert somar(2, 3) == 5
